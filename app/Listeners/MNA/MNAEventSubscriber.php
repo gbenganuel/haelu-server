@@ -31,10 +31,16 @@ class MNAEventSubscriber
     /**
      * handle notifications.
      */
-    public function handleRiskNotifications($event) {
+    public function handleNotifications($event) {
+
         // if there are risks, send corresponding alerts
-        
-        //$event->user->notify(new UserPinCreated($event->user));
+        /* 
+        if ($event->mna->screening_score_verdict == 'malnourished') {
+            // notify loved ones
+            $event->mna->user->next_of_kin->notify(new PatientIsMalnourished($event->user));
+            // notify physician
+            $event->mna->user->physician->notify(new PatientIsMalnourished($event->user));
+        }*/
     }
  
     /**
@@ -47,7 +53,7 @@ class MNAEventSubscriber
     {
         $events->listen(
             NewMNACreatedEvent::class,
-            [MNAEventSubscriber::class, 'handleRiskNotifications']
+            [MNAEventSubscriber::class, 'handleNotifications']
         );
     }
 }
