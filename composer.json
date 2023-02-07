@@ -11,6 +11,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
+        "laravel/vapor-core": "^2.28",
         "owen-it/laravel-auditing": "^13.0"
     },
     "require-dev": {
