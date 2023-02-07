@@ -2,6 +2,7 @@ id: 42184
 name: Haelu-server
 environments:
     production:
+        database: haelu
         memory: 1024
         cli-memory: 512
         runtime: 'php-8.2:al2'
